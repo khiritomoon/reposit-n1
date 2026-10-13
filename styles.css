@@ -69,6 +69,8 @@ svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width:
 /* ============ Header ============ */
 .site-header { position: fixed; inset: 0 0 auto; height: var(--header-h); z-index: 100; transition: background .3s, box-shadow .3s; }
 .site-header.scrolled, .site-header.menu-open { background: rgba(250, 247, 242, .96); backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--line); }
+/* backdrop-filter convierte la cabecera en contenedor de los elementos fixed y recortaría el menú móvil */
+.site-header.menu-open { backdrop-filter: none; background: var(--bg); }
 .header-inner { height: 100%; display: flex; align-items: center; gap: 24px; }
 .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; transition: color .3s; }
 .scrolled .logo, .menu-open .logo { color: var(--ink); }
