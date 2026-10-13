@@ -78,6 +78,16 @@ form.addEventListener('submit', (e) => {
   const invalid = required.filter((el) => (el.type === 'checkbox' ? !el.checked : !el.value.trim()));
   required.forEach((el) => el.classList.toggle('invalid', invalid.includes(el)));
 
+  // Solo se abre de martes (2) a viernes (5)
+  const day = dateInput.value ? new Date(dateInput.value + 'T12:00').getDay() : null;
+  if (!invalid.length && (day < 2 || day > 5)) {
+    dateInput.classList.add('invalid');
+    errorBox.textContent = 'Abrimos de martes a viernes. Elige otro día, por favor.';
+    errorBox.hidden = false;
+    dateInput.focus();
+    return;
+  }
+
   if (invalid.length) {
     errorBox.textContent = 'Revisa los campos marcados: nombre, teléfono, servicio, día y la casilla de privacidad.';
     errorBox.hidden = false;
@@ -93,9 +103,9 @@ form.addEventListener('submit', (e) => {
     `• Nombre: ${d.get('name')}`,
     `• Teléfono: ${d.get('phone')}`,
     `• Servicio: ${d.get('service')}`,
-    `• Día: ${date} (${d.get('time').toLowerCase()})`,
+    `• Día: ${date}`,
+    `• Franja: ${d.get('time')}`,
   ];
-  if (d.get('who') !== 'Me da igual') lines.push(`• Con: ${d.get('who')}`);
   if (d.get('notes').trim()) lines.push(`• Comentarios: ${d.get('notes').trim()}`);
 
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
