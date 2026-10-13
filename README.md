@@ -10,12 +10,13 @@ Web de una sola página (HTML + CSS + JS, sin dependencias). Para verla, abre `i
 - Equipo: Marisa Iglesias (fundadora) y Esther
 - Filosofía bio: productos naturales (sin sección de productos ni marcas)
 - Sin precios: los servicios solo muestran la duración orientativa
+- Galería con 5 fotos reales de trabajos (carpeta `images/`)
+- Redes: [Instagram](https://www.instagram.com/marisaiglesias_peluqueria/), [Facebook](https://www.facebook.com/marisa.iglesiascano/?locale=es_ES) y [TikTok](https://www.tiktok.com/@marisapelu), en "Contacto", en el pie y en la galería
 
 ## Pendiente de sustituir
 - **Horario**: es de ejemplo (Google Maps aún no lo tiene). Está en la sección "Contacto".
-- **Fotos**: ahora son imágenes de Unsplash. Cámbialas por fotos reales del salón, de Marisa y Esther y de sus trabajos.
+- **Fotos**: la portada, "Nosotras" y las fotos de Marisa y Esther siguen siendo imágenes de Unsplash. Cámbialas por fotos reales (mejor en alta resolución). Para añadir más trabajos a la galería, guarda la foto en `images/` y copia uno de los `<figure>` de la sección "Galería".
 - **Duraciones** de los servicios: son orientativas.
-- **Redes sociales**: enlaces a Instagram, TikTok y Facebook en "Contacto".
 - **Email** (opcional): no hay ninguno; si queréis mostrarlo, se puede añadir en "Contacto".
 - **Textos legales**: Aviso legal, Privacidad y Cookies (en el pie).
 
