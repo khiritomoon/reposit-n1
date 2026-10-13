@@ -56,7 +56,7 @@ tabs.forEach((tab, i) => {
 });
 
 // Animación suave al aparecer
-const revealTargets = document.querySelectorAll('.section-head, .pillar, .owner, .service-grid, .criterion, .product-card, .review, .about-grid, .home-care');
+const revealTargets = document.querySelectorAll('.section-head, .team-head, .pillar, .team-card, .service-grid, .review, .about-grid');
 if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const io = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -95,6 +95,7 @@ form.addEventListener('submit', (e) => {
     `• Servicio: ${d.get('service')}`,
     `• Día: ${date} (${d.get('time').toLowerCase()})`,
   ];
+  if (d.get('who') !== 'Me da igual') lines.push(`• Con: ${d.get('who')}`);
   if (d.get('notes').trim()) lines.push(`• Comentarios: ${d.get('notes').trim()}`);
 
   window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
